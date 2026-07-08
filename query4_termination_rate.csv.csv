@@ -1,0 +1,10 @@
+"phase","total_trials","terminated_trials","termination_rate_pct"
+PHASE1,590,127,21.5
+EARLY_PHASE1,32,6,18.8
+PHASE1/PHASE2,375,63,16.8
+PHASE2/PHASE3,58,7,12.1
+PHASE2,1130,130,11.5
+NA,271,22,8.1
+PHASE3,418,34,8.1
+PHASE4,50,1,2.0
+,517,0,0.0

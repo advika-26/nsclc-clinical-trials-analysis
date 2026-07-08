@@ -20,16 +20,18 @@ It's modeled after the kind of due-diligence analysis used in life sciences cons
 [AACT (Aggregate Analysis of ClinicalTrials.gov)](https://aact.ctti-clinicaltrials.org/) — a free, public PostgreSQL database maintained by the Clinical Trials Transformation Initiative, updated daily from ClinicalTrials.gov.
 
 ## Repository Structure
-├── sql/
-│   └── nsclc_sql_analysis.sql       # All SQL queries, commented
-├── data/
-│   ├── query3_phase_summary.csv     # Trial count & enrollment by phase
-│   ├── query4_termination_rate.csv  # Termination rate by phase
-│   ├── query5_rank_sponsors.csv     # Full sponsor ranking by phase
-│   └── query5b_top_sponsor.csv      # Top sponsor per phase
-├── notes/
-│   └── sql_findings_summary.md      # Question → method → finding write-up
-└── README.md
+
+- `sql/`
+  - `nsclc_sql_analysis.sql` — All SQL queries, commented
+- `data/`
+  - `query3_phase_summary.csv` — Trial count & enrollment by phase
+  - `query4_termination_rate.csv` — Termination rate by phase
+  - `query5_rank_sponsors.csv` — Full sponsor ranking by phase
+  - `query5b_top_sponsor.csv` — Top sponsor per phase
+- `notes/`
+  - `sql_findings_summary.md` — Question → method → finding write-up
+- `README.md`
+  
 ## Key Findings So Far (SQL Phase)
 
 1. **Development activity concentrates in Phase 2** — highest trial count and average enrollment of any phase.

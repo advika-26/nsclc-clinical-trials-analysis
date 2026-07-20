@@ -43,5 +43,3 @@
 ## SQL Skills Demonstrated
 SELECT, WHERE, subqueries, JOIN, GROUP BY, aggregation (COUNT/AVG), CTEs, window functions (RANK, PARTITION BY).
 
-AstraZeneca/Roche/NCI comparison — this is too good a finding to risk forgetting later.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-

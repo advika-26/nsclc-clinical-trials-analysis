@@ -53,6 +53,12 @@ See [`notes/sql_findings_summary.md`](./notes/sql_findings_summary.md) and [`NSC
 - [x] Business frameworks (Five Forces, SWOT)
 - [x] Final investment memo
 
+## AI-Assisted Workflow
+The final investment memo was generated using a structured prompt (see 
+[`prompts/memo_generation_prompt.md`](./prompts/memo_generation_prompt.md)) 
+that pulls data directly from this project's SQL/Excel outputs rather than 
+relying on the model's own assumptions.
+
 ## About
 
 Built as a portfolio project ahead of an MSc in Biotechnology & Business at UCD, targeting roles in life sciences strategy, consulting, and analytics.

@@ -1,0 +1,84 @@
+# Prompt Used to Generate the Investment Memo
+
+This prompt was used with Claude to generate the final Word document 
+(`NSCLC_Investment_Memo.docx`) from my SQL, Excel, and Power BI outputs. 
+It's structured to keep the AI grounded in my actual data rather than 
+letting it invent figures — every number is sourced from attached files, 
+not written into the prompt itself. The prompt also encodes specific 
+formatting, tone, and visual-style requirements (plain-language explanations 
+throughout, consistent color scheme matching my dashboard, specific chart 
+types per section) so the output matches a real deliverable rather than a 
+generic AI-generated document.
+
+---
+
+# Prompt: NSCLC Investment Memo (Word Document)
+
+I've attached the files from my NSCLC clinical trials analysis project (SQL query result CSVs, my Excel workbook with pricing/TAM-SAM-SOM/PoS models, and my notes on the SQL findings and business frameworks). Using the actual data in these files, create a professional Word document (.docx) titled "NSCLC Clinical Trials: Investment & Risk Assessment" — a due-diligence-style investment memo analyzing the Non-Small Cell Lung Cancer (NSCLC) drug development market.
+
+This is a portfolio deliverable for someone with a biotech background moving into business/strategy, so it must be substantive and data-driven, but written so a reader with **no biotech, medical, or finance background** can follow it end to end. Explain every technical term in plain language the first time it appears. Do not invent or estimate any figure — pull every number directly from the attached files, and if something needed isn't in the files, flag it rather than guessing.
+
+## Files attached (reference these for all data/figures)
+
+- `query3_phase_summary.csv` — trial count and average enrollment by phase
+- `query4_termination_rate.csv` — termination rate by phase
+- `query5_rank_sponsors.csv` and `query5b_top_sponsor.csv` — sponsor trial counts and rankings by phase
+- Excel workbook containing: drug pricing reference table (10 NSCLC drugs), sponsor-to-drug lookup, TAM/SAM/SOM market sizing model, Probability-of-Success model
+- `sql_findings_summary.md` — my written interpretation of the SQL findings
+- `business_frameworks.md` — my Porter's Five Forces and SWOT analysis
+
+## Document structure (in this order)
+
+1. **Title page** — centered: title, subtitle "Investment & Risk Assessment", italic one-line description, and a line noting it was built using SQL, Excel, and Power BI analysis of the AACT clinical trials database. Page break after.
+
+2. **"How to Read This Report"** — state what % of lung cancer NSCLC represents (pull from files/notes if stated, otherwise state as commonly-cited). Explain clinical trial phases in plain terms as a checklist:
+   - Phase 1 — Is it safe?
+   - Phase 2 — Does it seem to work?
+   - Phase 3 — Does it really work, at scale?
+   - Phase 4 — Ongoing checks after approval
+   Note that most drugs fail somewhere along this path, and that dashboard charts are embedded throughout with captions.
+
+3. **Executive Summary** — a highlighted callout box stating the bottom line, using the real Probability-of-Success figures from the Excel model, followed by 5 bullet key findings pulled from the SQL findings summary and business frameworks notes.
+
+4. **Data & Methodology** — state that all findings come from AACT (Aggregate Analysis of ClinicalTrials.gov), analyzed via SQL, Excel, and Power BI. State that estimates/benchmarks are always sourced explicitly, per the sourcing already documented in my notes files.
+
+5. **Section 1 — "Where Is Development Activity Concentrated?"** — trial count by phase from `query3_phase_summary.csv`, with embedded bar chart, a data table, and a "why this matters" paragraph on wherever activity concentrates in the actual data.
+
+6. **Section 2 — "Who Is Leading NSCLC Development?"** — sponsor/organization trial counts from `query5_rank_sponsors.csv` / `query5b_top_sponsor.csv`, embedded horizontal bar chart (top ~10-11 sponsors), data table, and analysis of the academic-vs-industry split and "full-pipeline" sponsors — reference my SQL findings notes for this interpretation.
+
+7. **Section 3 — "How Risky Is Each Stage?"** — termination rate by phase from `query4_termination_rate.csv`, embedded line/area chart, data table, callout box interpretation. Sub-section "A Deeper Risk Check: How Likely Is Approval, Really?" with embedded donut chart comparing the derived cumulative figure from my Excel PoS model vs. the real industry likelihood-of-approval figures (with source), explaining the gap between them.
+
+8. **Section 4 — "How Big Is the Financial Opportunity?"** — TAM/SAM/SOM market sizing explained in plain terms (bullet definitions), embedded funnel chart, data table (patients/year and $ value per tier) pulled directly from my Excel TAM/SAM/SOM model, sources line (use whatever sources are cited in that sheet), and a callout box summary.
+
+9. **Section 5 — "Competitive Forces Shaping This Market"** — Porter's Five Forces, using my `business_frameworks.md` content as the basis, each force as its own sub-heading with a plain-language paragraph, grounded in the same dataset (e.g., cite actual pricing range from the drug pricing table where relevant).
+
+10. **Section 6 — "Company Spotlight"** — SWOT analysis using the company and content from `business_frameworks.md`, as a 2-column table (Category | Analysis).
+
+11. **Section 7 — "Conclusion & Recommendation"** — synthesis paragraph, 3 bullet takeaways, and a highlighted recommendation callout box, grounded in the findings above.
+
+12. **Appendix — Data Sources** — bulleted list of every real source cited across the notes and Excel files.
+
+## Charts to generate and embed
+
+Recreate each of the following as clean, styled chart images using the actual figures pulled from the attached files (do not skip this step even if a direct dashboard export isn't available):
+
+1. **Bar chart** — "Where Is NSCLC Trial Activity Concentrated?" — trial count by phase, sorted descending, data labels on top of bars.
+2. **Horizontal bar chart** — "Who's Driving NSCLC Development?" — top sponsors, sorted descending, data labels at bar end.
+3. **Line/area chart** — "Where Does NSCLC Drug Development Risk Concentrate?" — termination rate by phase, sorted descending, filled area under the line, data labels at each point.
+4. **Funnel chart** — "How Big Is the Prize? [Drug/Company] NSCLC Market Opportunity" — TAM/SAM/SOM as three shrinking horizontal bars, centered, tier name + dollar value labeled inside each bar.
+5. **Donut chart** — "Why Is Oncology Riskier Than It Looks?" — three-way split (derived cumulative / non-oncology benchmark / oncology benchmark) using a single-hue magenta/pink family (dark→medium→light), percentage labels for small slices (<15%) pulled outside the ring with thin leader lines so they don't overlap the wedge; label for the largest slice sits inside the wedge in white bold text. Legend below the chart.
+
+Each chart gets a centered italic caption underneath naming which dashboard page it came from (if I've told you my Power BI page names, use those; otherwise a generic descriptive caption is fine).
+
+## Visual style requirements
+
+- **Color palette:** Navy (#1F4E79) for headings/titles/borders, teal (#2E86AB) for sub-headings, light blue (#DCE9F1) for callout box backgrounds, gray (#595959) for captions/secondary text. Chart data series use a magenta/pink family (#C34C8C primary) — match whatever color scheme I've used in my actual Power BI dashboard if I've described or shown it to you; don't default to a generic blue theme for the charts.
+- **Headings:** H1 bold navy with a bottom border rule; H2 bold teal, no border.
+- **Callout boxes:** single-cell shaded tables (light blue fill, teal border) with italic navy text, used for "bottom line" statements and the final recommendation.
+- **Data tables:** navy header row with white bold text, alternating white/very-light-blue row shading, thin gray borders.
+- **Body text:** plain paragraphs, no jargon without an inline explanation, short bullet lists over dense paragraphs where possible.
+- **Page setup:** standard Letter size, 1080 twip margins.
+
+## Tone
+
+Write for a general, non-specialist reader throughout. Every acronym or technical term (NSCLC, TAM/SAM/SOM, EGFR, Phase 1–4, termination rate, likelihood of approval) must be defined in plain words at first use. Prioritize clarity over jargon-signaling — this should read as confidently simple, not simplistic. If any figure needed for a section isn't present in the attached files, note that explicitly rather than fabricating a plausible-sounding number.

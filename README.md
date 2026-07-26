@@ -24,7 +24,7 @@ It's modeled after the kind of due-diligence analysis used in life sciences cons
 
 - [`Docs/`](./Docs)
   - [`NSCLC_Investment_Memo.pdf`](./Docs/NSCLC_Investment_Memo.pdf) — Full written investment memo
-  - - [`NSCLC_Analysis_Exhibits.pdf`](./Docs/NSCLC_Analysis_Exhibits.pdf) — Labeled exhibits: trial volume, termination rates, sponsor breakdown, TAM/SAM/SOM, and PoS model
+  - [`NSCLC_Analysis_Exhibits.pdf`](./Docs/NSCLC_Analysis_Exhibits.pdf) — Labeled exhibits: trial volume, termination rates, sponsor breakdown, TAM/SAM/SOM, and PoS model
 
 - [`data/`](./data)
   - `nsclc_sql_analysis.sql` — All SQL queries, commented

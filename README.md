@@ -38,7 +38,7 @@ It's modeled after the kind of due-diligence analysis used in life sciences cons
   - [`business_frameworks.md`](./notes/business_frameworks.md) — Porter's Five Forces and SWOT analysis
   - [`prompts`](./notes/prompts) — Prompt used to generate the final investment memo via AI
 - `README.md`
-
+  
 ## Key Findings
 
 1. **Development activity concentrates in Phase 2** — highest trial count and average enrollment of any phase.

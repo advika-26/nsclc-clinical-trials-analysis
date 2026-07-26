@@ -23,9 +23,9 @@ It's modeled after the kind of due-diligence analysis used in life sciences cons
 ## Repository Structure
 
 - [`Docs/`](./Docs)
-  - [`NSCLC .xlsx`](./Docs/NSCLC%20.xlsx) — Excel workbook (pivot tables, TAM/SAM/SOM model, Probability-of-Success model)
-  - [`NSCLC power bi.pbix`](./Docs/NSCLC%20power%20bi.pbix) — Power BI dashboard file (open in Power BI Desktop to explore interactively)
   - [`NSCLC_Investment_Memo.pdf`](./Docs/NSCLC_Investment_Memo.pdf) — Full written investment memo
+  - <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8209799c-946c-4374-9aba-7a09e36c99db" />
+
 - [`data/`](./data)
   - `nsclc_sql_analysis.sql` — All SQL queries, commented
   - `query1.csv` , `query2.csv` — Base query exports
